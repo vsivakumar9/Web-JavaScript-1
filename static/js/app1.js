@@ -7,9 +7,6 @@ var tableData = data;
 var button = d3.select("#filter-btn");
 // Getting a reference to the input element on the page with the id property set to 'input-field'
 var inputDate = d3.select("#datetime");
-//Getting a reference to state
-var inputState = d3.select("#state");
-var defDate = '1/11/2010'
 
 // Select all tbody from using d3 select and add  table rows dynamically from tableData.
 function loadTableData(dataArray) {
@@ -36,72 +33,32 @@ d3.select("tbody")
 // function getInput () {
 //   button.on("click", handleClick);
 // }
-var iDate  = defDate
-function getInput() {
-  console.log("in getInput function");
-  //Input fields can trigger a change event when new text is entered.
-  inputDate.on("change", function() {
-    d3.event.preventDefault();
-    var newDate = d3.event.target.value
-    if (newDate) {
-      console.log(newDate)
-      var iDate  = newDate
-      console.log("New Date: " + iDate)
-      } 
-    else {
-      iDate = defDate
-      console.log("default date :" + iDate )
-      }
-  
-    return(iDate)
-  });
 
-}
-
-inputState.on("change",function(){
-  d3.event.preventDefault();
-  var newState = d3.event.target.value
-  console.log("New State: " +  newState)
-});
-
-function filterData(date) {
-
-  console.log("In filterData" + date)
-      
-}
+//Getting a reference to state
+var state = d3.select("state");
 
 //Main logic.
 // Load all the table data of UFO sightings and render in html template. 
 loadTableData(tableData);
 
+//On a submit, get date from the html form.
+getInput();
+
 // You can also define the click handler inline
 button.on("click", function() {
-  // Prevent the form from refreshing the page
-  d3.event.preventDefault();
-  console.log("Hi, filter button was clicked!");
+  console.log("Hi, a button was clicked!");
   console.log(d3.event.target);
-  //Filter the UFO sightings data based on the date and reload table in DOM.
-  filterData(iDate) ;
 });
 
-//On a submit, get date from the html form.
-dateInput = getInput();
+//Input fields can trigger a change event when new text is entered.
+inputDate.on("change", function() {
+  var newText = d3.event.target.value
+  console.log(newText);
+)};
 
-// inputDate.on("change", function() {
-//   d3.event.preventDefault();
-//   var newDate = d3.event.target.value
-//   if (newDate) {
-//     console.log(newDate)
-//     var iDate  = newDate
-//     console.log("New Date: " + iDate)
-//     } 
-//   else {
-//     iDate = '1/11/2011'
-//     console.log("default date :" + iDate )
-//     }
 
-//  //return(newDate)
-// });
+
+
 
 
 

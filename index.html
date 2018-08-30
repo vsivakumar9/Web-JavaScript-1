@@ -16,7 +16,7 @@
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="index.html">UFO Sightings
-            <img class="nav-ufo" src="static/images/ufo.svg">
+            <img class="nav-ufo" src="static/images/ufo.svg" alt="UFO Sightings" width ="60%">
           </a>
         </div>
       </div>
@@ -32,17 +32,21 @@
             <div class="panel panel-default">
               <div class="panel-heading">Filter Search</div>
               <div class="panel-body">
-                <form>
-                  <div class="form-group">
-                    <ul class="list-group" id="filters">
-                      <li class="filter list-group-item">
-                        <label for="date">Enter a Date</label>
-                        <input class="form-control" id="datetime" type="text" placeholder="1/11/2011">
-                      </li>
-                    </ul>
-                  </div>
-                  <button id="filter-btn" type="submit" class="btn btn-default">Filter Table</button>
-                </form>
+                  <form>
+                    <div class="form-group">
+                      <ul class="list-group" id="filters">
+                        <li class="filter list-group-item">
+                          <label for="date">Enter a Date</label>
+                          <input class="form-control" id="datetime" type="text" placeholder="1/11/2011">
+                        </li>
+                        <li class="filter list-group-item">
+                          <label for="State">Enter a State</label>
+                          <input class="form-control" id="state" type="text" placeholder="tx">
+                        </li>
+                      </ul>
+                    </div>
+                    <button id="filter-btn" type="submit" class="btn btn-default">Filter Table</button>
+                  </form>
               </div>
             </div>
           </aside>
@@ -82,3 +86,4 @@
 </body>
 
 </html>
+
