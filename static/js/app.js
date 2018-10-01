@@ -36,16 +36,16 @@ d3.select("tbody")
 
 //Filter the data based on input parameters like data and only return values for which
 // //criteria is satisfied. 
-// function filterData(date) {
+// function filterData(dateV,stateV,countryV) {
 //   console.log("In filterData" + date)
 //   if (date)
-//     var filtData = tableData.filter(fData => fData.datetime == date);
+//     var filtData = tableData.filter(fData => (fData.datetime == dateV) && (fData.state == stateV) );
 //     //loadFiltData = 'y';
 //     console.log("loadFiltData " + FiltData)
 //     console.log(filtData);
 //     return(filtData)
       
-//}
+// }
 
 //Main logic.
 // Load all the table data of UFO sightings and render in html template.
@@ -74,10 +74,10 @@ filtButton.on("click", function() {
  var stateValue = inputState.property("value");
 
  console.log(" in filtbutton.on code ")
- console.log(dateValue);
- console.log(stateValue);
+ console.log("dateValue  " + dateValue);
+ console.log("stateValue " + stateValue);
  console.log(" after getting date/state value")
- var filtData = tableData.filter(fData => (fData.datetime == dateValue) && fData.state == stateValue) ;
+ var filtData = tableData.filter(fData => (fData.datetime == dateValue) && (fData.state == stateValue) ) ;
  console.log(filtData) 
  loadFiltData = "y";
  if (loadFiltData == 'y') {
